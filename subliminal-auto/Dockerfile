@@ -6,5 +6,5 @@ RUN pip --no-cache-dir install subliminal watchdog
 
 ADD services.ini /etc/supervisor.d/
 ADD subliminal_watchdog.py my_init /
-#CMD ["/my_init"]
-CMD ["supervisord -c /etc/supervisord.conf -n"]
+CMD ["/my_init"]
+#CMD ["supervisord -c /etc/supervisord.conf -n"]
