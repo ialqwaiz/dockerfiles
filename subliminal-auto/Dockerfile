@@ -1,9 +1,8 @@
-FROM arm32v7/alpine
+FROM arm32v7/python
 
-RUN apk add --no-cache python3 ca-certificates shadow supervisor && \
-    pip3 --no-cache-dir install subliminal watchdog && \
-    adduser -D user && \
-    passwd -d user
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends cron
+RUN pip --no-cache-dir install subliminal watchdog
 
 ADD services.ini /etc/supervisor.d/
 ADD subliminal_watchdog.py my_init /
