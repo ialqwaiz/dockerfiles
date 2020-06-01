@@ -2,12 +2,12 @@
 set -e
 
 # set defaults
-PUID=${PUID:-1000}
-PGID=${PGID:-1000}
+##PUID=${PUID:-1000}
+##PGID=${PGID:-1000}
 
 # fix permissions
-usermod -o -u $PUID user
-groupmod -o -g $PGID user
+##usermod -o -u $PUID user
+##groupmod -o -g $PGID user
 
 # start it
 exec supervisord -c /etc/supervisord.conf -n
