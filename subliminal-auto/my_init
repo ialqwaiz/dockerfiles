@@ -10,4 +10,4 @@ set -e
 ##groupmod -o -g $PGID user
 
 # start it
-exec supervisord -c /etc/supervisord.conf -n
+##exec supervisord -c /etc/supervisord.conf -n
