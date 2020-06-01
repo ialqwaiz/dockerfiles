@@ -7,7 +7,7 @@ declare -p | grep -Ev 'BASHOPTS|BASH_VERSINFO|EUID|PPID|SHELLOPTS|UID' > /contai
 # Setup a cron schedule
 echo "SHELL=/bin/bash
 BASH_ENV=/container.env
-* * * * * . $HOME/.profile; python /subliminal_watchdog.py >> /tmp/log.txt 2>&1
+* * * * * . $HOME/.profile; /run.sh
 # This extra line makes it a valid cron" > crontab.txt
 
 crontab crontab.txt
